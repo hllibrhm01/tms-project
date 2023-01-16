@@ -13,37 +13,37 @@ class UserSeeder extends Seeder
         {
 
                 $adminUser = User::create([
-                        "name" => "Emircan Erdem",
-                        "email" => "eemircanerdem@yandex.com",
+                        "name" => "admin",
+                        "email" => "admin@admin.com",
                         "password" => Hash::make("123")
                 ]);
 
                 $driver = User::create([
-                        "name" => "BEDİRHAN DEVECİ",
+                        "name" => "driver1",
                         "email" => "driver1@yandex.com",
                         "password" => Hash::make("123")
                 ]);
 
                 $driver2 = User::create([
-                        "name" => "MURAT KARATAŞ",
+                        "name" => "driver2",
                         "email" => "driver2@yandex.com",
                         "password" => Hash::make("123")
                 ]);
 
                 $driver3 = User::create([
-                        "name" => "MAHMUT SARIDAĞ",
+                        "name" => "driver3",
                         "email" => "driver3@yandex.com",
                         "password" => Hash::make("123")
                 ]);
 
                 $driver4 = User::create([
-                        "name" => "NİHAT YILMAZ",
+                        "name" => "driver4",
                         "email" => "driver4@yandex.com",
                         "password" => Hash::make("123")
                 ]);
 
                 $driver5 = User::create([
-                        "name" => "ALİ UZUN",
+                        "name" => "driver5",
                         "email" => "driver5@yandex.com",
                         "password" => Hash::make("123")
                 ]);

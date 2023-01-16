@@ -24,7 +24,8 @@ class DatabaseSeeder extends Seeder
             DistrictSeeder::class,
             EquipmentSeeder::class,
             TaxDepartmentSeeder::class,
-            DriverSeeder::class,
+            // DriverSeeder::class,
+            TestDataSeeder::class,
             ServiceSeeder::class,
             GeneralSettingsSeeder::class,
         ]);
