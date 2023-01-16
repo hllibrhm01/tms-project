@@ -13,6 +13,7 @@ class AuthServiceProvider extends ServiceProvider
 {
     protected $policies = [
         // TMSPreorder::class => PreorderPolicy::class,
+        'App\Models\Model' => 'App\Policies\ModelPolicy', //uncomment
     ];
     public function boot()
     {
