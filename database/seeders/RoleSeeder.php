@@ -25,7 +25,7 @@ class RoleSeeder extends Seeder
                 "guard_name" => "web"
             ],
             [
-                "name" => "Driver",
+                "name" => "driver",
                 "guard_name" => "web"
             ],
             [
