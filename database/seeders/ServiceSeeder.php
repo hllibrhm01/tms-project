@@ -10,8 +10,7 @@ class ServiceSeeder extends Seeder
     public function run()
     {
         $serviceList = [
-            ['id' => 1, 'author' => 'GÖKHAN GÜÇLÜ', 'name' => 'GÜRÜN GLOBAL', 'phone' => '05464641858', 'email' => 'gokhan.guclu@yesilgurunglobal.com', 'address' => 'Sabit bir adres bulunmuyor'],
-            ['id' => 2, 'author' => 'MURAT BİLİM', 'name' => '1K2A LOJİSTİK HİZMETLERİ', 'phone' => '05421380202', 'email' => 'murat.bilim@1k2a.net', 'address' => 'Sabit bir adres bulunmuyor'],
+            ['id' => 1, 'author' => 'author', 'name' => 'Service auther name', 'phone' => '05xx xxx xxxx', 'email' => 'email address', 'address' => 'address info'],
         ];
         TMSVehicleService::insert($serviceList);
     }

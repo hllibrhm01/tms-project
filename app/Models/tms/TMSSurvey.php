@@ -3,9 +3,12 @@
 namespace App\Models\tms;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class TMSSurvey extends Model
 {
+    use SoftDeletes;
+
     protected $table = 'tms_surveys';
 
     protected $fillable = [

@@ -10,6 +10,7 @@
             cursor: pointer;
         }
     </style>
+    <link href="{{ asset('/css/main/main.css') }}" rel="stylesheet" type="text/css">
 @endsection
 
 @section('content')
@@ -58,7 +59,7 @@
                                                                 href="{{ route('get.tms.order.view', ['id' => $vehicleOrder->order->id]) }}">
                                                                 {!! $vehicleOrder->order->getProductInfo() !!}
                                                             </a>
-                                                        </td>
+                                                        </td> 
                                                         <td>{{ $vehicleOrder->order->address_description }}</td>
                                                         <td>{{ $vehicleOrder->order->orderer_phone }}</td>
                                                         <td>{{ $vehicleOrder->order->orderer_email }}</td>

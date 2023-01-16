@@ -90,7 +90,7 @@ class TestDataSeeder extends Seeder
                 "author" => "Service 1 Yetkili",
                 "name" => "Service 1",
                 "phone" => "0123 456 789",
-                "email" => "service1@1k2a.net",
+                "email" => "service1@tms-project.net",
                 "address" => "Service 1 Address",
             ]
         );
@@ -100,7 +100,7 @@ class TestDataSeeder extends Seeder
                 "author" => "Service 2 Yetkili",
                 "name" => "Service 2",
                 "phone" => "2123 456 789",
-                "email" => "service2@1k2a.net",
+                "email" => "service2@tms-project.net",
                 "address" => "Service 2 Address",
             ]
         );
@@ -110,7 +110,7 @@ class TestDataSeeder extends Seeder
                 "author" => "Service 3 Yetkili",
                 "name" => "Service 3",
                 "phone" => "3123 456 789",
-                "email" => "service3@1k2a.net",
+                "email" => "service3@tms-project.net",
                 "address" => "Service 3 Address",
             ]
         );
@@ -123,7 +123,7 @@ class TestDataSeeder extends Seeder
                 "author" => "Supplier 1 Yetkili",
                 "name" => "Supplier 1",
                 "phone" => "0123 456 789",
-                "email" => "supplier1@1k2a.net",
+                "email" => "supplier1@tms-project.net",
                 "address" => "Supplier 1 Address",
             ]
         );
@@ -133,7 +133,7 @@ class TestDataSeeder extends Seeder
                 "author" => "Supplier 2 Yetkili",
                 "name" => "Supplier 2",
                 "phone" => "2123 456 789",
-                "email" => "supplier2@1k2a.net",
+                "email" => "supplier2@tms-project.net",
                 "address" => "Supplier 2 Address",
             ]
         );
@@ -143,7 +143,7 @@ class TestDataSeeder extends Seeder
                 "author" => "Supplier 3 Yetkili",
                 "name" => "Supplier 3",
                 "phone" => "3123 456 789",
-                "email" => "supplier3@1k2a.net",
+                "email" => "supplier3@tms-project.net",
                 "address" => "Supplier 3 Address",
             ]
         );

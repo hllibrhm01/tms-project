@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>1K2A | BULUNAMADI</title>
+    <title>TMS-Project | BULUNAMADI</title>
 
     <!-- Styles -->
     <style>

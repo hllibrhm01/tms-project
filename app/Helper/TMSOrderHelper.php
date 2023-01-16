@@ -79,6 +79,10 @@ class TMSOrderHelper
                     "value" => TMSOrder::OrderStatus[TMSOrder::STATUS_INSTALLED]
                 ];
                 $nextStatus[] = [
+                    "id" => TMSOrder::STATUS_WILL_BE_INSTALLED_LATER,
+                    "value" => TMSOrder::OrderStatus[TMSOrder::STATUS_WILL_BE_INSTALLED_LATER]
+                ];
+                $nextStatus[] = [
                     "id" => TMSOrder::STATUS_BROKEN,
                     "value" => TMSOrder::OrderStatus[TMSOrder::STATUS_BROKEN]
                 ];
@@ -87,6 +91,12 @@ class TMSOrderHelper
                 $nextStatus[] = [
                     "id" => TMSOrder::STATUS_NOT_READY_TO_INSTALL,
                     "value" => TMSOrder::OrderStatus[TMSOrder::STATUS_NOT_READY_TO_INSTALL]
+                ];
+                break;
+            case TMSOrder::STATUS_WILL_BE_INSTALLED_LATER:
+                $nextStatus[] = [
+                    "id" => TMSOrder::STATUS_INSTALLED,
+                    "value" => TMSOrder::OrderStatus[TMSOrder::STATUS_INSTALLED]
                 ];
                 break;
             case TMSOrder::STATUS_INSTALLED:

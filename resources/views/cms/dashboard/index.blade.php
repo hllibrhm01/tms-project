@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card">
-                        <p> 1K2A NAKLİYE TAKİP </p>
+                        <p> TMS PROJECT NAKLİYE TAKİP </p>
                     </div>
                     <!-- /.card -->
                 </div>

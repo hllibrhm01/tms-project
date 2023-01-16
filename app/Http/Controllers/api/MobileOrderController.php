@@ -80,7 +80,7 @@ class MobileOrderController extends Controller
 
     public function getAllOrderStatusBySettings()
     {
-        $orderStatus = GeneralSetting::getSettings()->note_mandatory_status;
+        $orderStatus = GeneralSetting::getSettings();
         return response()->json($orderStatus);
     }
 

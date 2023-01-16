@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>1K2A | NAKLİYE TAKİP </title>
+    <title>TMS | NAKLİYE TAKİP </title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -37,7 +37,7 @@
                     <div class="col-8 ml-auto mr-auto">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">1K2A ALFA MEMNUNİYET ANKETİ</h3>
+                                <h3 class="card-title">TMS MEMNUNİYET ANKETİ</h3>
                             </div>
                             <!-- /.card-header -->
                             <div class="card-body">

@@ -5,9 +5,12 @@ namespace App\Models\tms;
 use App\Models\City;
 use App\Models\District;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class TMSPreorder extends Model
 {
+    use SoftDeletes;
+
     protected $table = 'tms_preorders';
 
     protected $fillable = [

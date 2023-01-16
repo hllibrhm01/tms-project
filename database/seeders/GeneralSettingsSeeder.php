@@ -15,7 +15,7 @@ class GeneralSettingsSeeder extends Seeder
     public function run()
     {
         $setting = new GeneralSetting();
-        $setting->copyright = "Telif Hakkı © 2022-2023 1K2A. Tüm hakları saklıdır.";
+        $setting->copyright = "Telif Hakkı © 2022-2023 TMS-Project. Tüm hakları saklıdır.";
         $setting->daily_meal_price = 55.0;
         $setting->code_mandatory_status = "[8]";
         $setting->note_mandatory_status = "[6,11,12,13,14]";

@@ -23,13 +23,14 @@ class TMSOrder extends Model
     const STATUS_ON_EXPLORE = 5;
     const STATUS_READY_TO_INSTALL = 6;
     const STATUS_NOT_READY_TO_INSTALL = 7;
-    const STATUS_INSTALLED = 8;
-    const STATUS_WAITING_FOR_CONFIRMATION = 9;
-    const STATUS_CONFIRM_WITH_DELIVERY_RECEIPT = 10;
-    const STATUS_PENDING_REVIEW = 11;
-    const STATUS_BROKEN = 12;
-    const STATUS_COMPLETED = 13;
-    const STATUS_NOT_COMPLETED = 14;
+    const STATUS_WILL_BE_INSTALLED_LATER = 8;
+    const STATUS_INSTALLED = 9;
+    const STATUS_WAITING_FOR_CONFIRMATION = 10;
+    const STATUS_CONFIRM_WITH_DELIVERY_RECEIPT = 11;
+    const STATUS_PENDING_REVIEW = 12;
+    const STATUS_BROKEN = 13;
+    const STATUS_COMPLETED = 14;
+    const STATUS_NOT_COMPLETED = 15;
     const ORDER_TYPE_REGULAR = 1;
     const ORDER_TYPE_FAST = 2;
 
@@ -41,13 +42,14 @@ class TMSOrder extends Model
         "5" => "Keşifte",
         "6" => "Kuruluma Uygun",
         "7" => "Kuruluma Uygun Değil",
-        "8" => "Kuruldu",
-        "9" => "Müşteri Onayı Bekliyor",
-        "10" => "Teslimat Fişi İle Onaylandı",
-        "11" => "Anket Bekleniyor",
-        "12" => "Hasarlı Ürün",
-        "13" => "Tamamlandı",
-        "14" => "Tamamlanmadı",
+        "8" => "Daha Sonra Kurulacak",
+        "9" => "Kuruldu",
+        "10" => "Müşteri Onayı Bekliyor",
+        "11" => "Teslimat Fişi İle Onaylandı",
+        "12" => "Anket Bekleniyor",
+        "13" => "Hasarlı Ürün",
+        "14" => "Tamamlandı",
+        "15" => "Tamamlanmadı",
     ];
 
     
@@ -185,7 +187,7 @@ class TMSOrder extends Model
         $tmsOrder->city_id = $request->city_id;
         $tmsOrder->district_id = $request->district_id;
         $tmsOrder->address_description = $request->address_description;
-        $tmsOrder->note = $request->note;
+        $tmsOrder->note = strtoupper($request->note);
         $tmsOrder->attachment = $attachment;
         $tmsOrder->sms_verification_code = generate_verification_code(6);
         $tmsOrder->status = self::STATUS_RECEIVED;
@@ -259,7 +261,8 @@ class TMSOrder extends Model
                     ->orWhere('tms_orders.status',  self::STATUS_ON_EXPLORE)
                     ->orWhere('tms_orders.status',  self::STATUS_READY_TO_INSTALL)
                     ->orWhere('tms_orders.status',  self::STATUS_INSTALLED)
-                    ->orWhere('tms_orders.status',  self::STATUS_WAITING_FOR_CONFIRMATION);
+                    ->orWhere('tms_orders.status',  self::STATUS_WAITING_FOR_CONFIRMATION)
+                    ->orWhere('tms_orders.status',  self::STATUS_WILL_BE_INSTALLED_LATER);
             })
             ->where('tms_vehicles_plans.plan_date', Carbon::now())
             ->whereNotNull('tms_vehicles_plans.deleted_at')
@@ -295,6 +298,12 @@ class TMSOrder extends Model
                 break;
             
             case self::STATUS_NOT_COMPLETED:
+                $order->end_time = Carbon::now();
+                $planId = TMSVehiclePlan::where('order_id', $id)->first()->id;
+                TMSVehiclePlan::deletePlan($planId);
+                break;
+            
+            case self::STATUS_WILL_BE_INSTALLED_LATER:
                 $order->end_time = Carbon::now();
                 $planId = TMSVehiclePlan::where('order_id', $id)->first()->id;
                 TMSVehiclePlan::deletePlan($planId);
@@ -368,7 +377,8 @@ class TMSOrder extends Model
         return self::where(
             function ($query) {
                 $query->where('status', '=', self::STATUS_RECEIVED)
-                    ->orWhere('status', '=', self::STATUS_NOT_COMPLETED);
+                    ->orWhere('status', '=', self::STATUS_NOT_COMPLETED)
+                    ->orWhere('status', '=', self::STATUS_WILL_BE_INSTALLED_LATER);
             }
         )->whereNotIn('id', $getOrderId)->get();
     }

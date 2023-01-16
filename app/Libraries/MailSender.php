@@ -25,7 +25,7 @@ class MailSender
             $this->mailClient->addBCC($mailFromAddress, $mailFromName);
 
             if (!env('APP_DEBUG'))
-                $this->mailClient->addBCC("eda@1k2a.net", "Eda Erdem");
+                $this->mailClient->addBCC("hllibrhm01@gmail.com", "Eda Erdem");
 
             $this->mailClient->setFrom($mailFromAddress, $mailFromName);
         } catch (Exception $e) {
