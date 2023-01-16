@@ -71,14 +71,8 @@ class LoginController extends Controller
     }
 
     public function logout(Request $request) {
-        // $token = $request->accessToken;
-        // $user = Auth::user()->tokens()->revoke();
-        // $token = Auth::user()->token();
-        // $token->revoke();
-        // $user->revoke();
         $token = $request->accessToken;
         $user = Auth::user()->token();
-        // $user = Auth::user()->token();
         $user->revoke();
         return response()->json(['success' => 'Logged out successfully'], 200);
     } 
