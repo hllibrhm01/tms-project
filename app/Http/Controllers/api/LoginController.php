@@ -67,7 +67,9 @@ class LoginController extends Controller
                 ];
             }
 
-        } catch (RequestException $e) {}
+        } catch (RequestException $e) {
+            return response()->json($e);
+        }
     }
 
     public function logout(Request $request) {
