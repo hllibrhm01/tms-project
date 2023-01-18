@@ -9,6 +9,7 @@
     "license": "MIT",
     "require": {
         "php": "^7.3|8.1.12",
+        "ext-gd": "*",
         "epigra/trgeozones": "^3.2",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
@@ -21,8 +22,7 @@
         "league/flysystem-aws-s3-v3": "1.0.29",
         "phpmailer/phpmailer": "dev-master",
         "phpoffice/phpspreadsheet": "^1.18",
-        "spatie/laravel-permission": "^5.5",
-        "ext-gd":" *"
+        "spatie/laravel-permission": "^5.5"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
